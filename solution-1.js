@@ -1,26 +1,11 @@
-//declaring a function to swap the case of each character in a string
+ //declaring a function to swap the case of each character in a string
 function swapCase(str) {
-  // Initializing an empty string to store the result string
-  let result = "";
-
-  // Iterating through each character in the input string
-  for (let i = 0; i < str.length; i++) {
-    // Retrieve the current character of the string
-    let charString = str[i];
-
-    // Checking if the character of the string is in lowercase
-    if (charString === charString.toLowerCase()) {
-      // If the character is in lowercase, convert it to uppercase and add to the result
-      result += charString.toUpperCase();
-    } else {
-      // If the character is in uppercase, convert it to lowercase and add to the result
-      result += charString.toLowerCase();
-    }
-  }
-
-  // Return the swapped string
-  return result;
+  // Using map function to iterate over each character of the string and swap the case
+  return str.split('').map(char => {
+    // Check if the character is in lowercase, if yes, convert it to uppercase, else convert to lowercase
+    return char === char.toLowerCase() ? char.toUpperCase() : char.toLowerCase();
+  }).join(''); // Joining the characters back to form a string
 }
 
-// Logging the result to the console and passing an argument
+// Logging the result and passing an argument
 console.log(swapCase("The Quick Brown Fox"));
